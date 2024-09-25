@@ -220,6 +220,14 @@ class Message implements ModelInterface
     private $product;
 
     /**
+     * @var ?Error $error
+     *
+     * @Type("RetailCrm\Mg\Bot\Model\Entity\Message\Error")
+     * @SkipWhenEmpty()
+     */
+    private $error;
+
+    /**
      * @return string|null
      */
     public function getId(): ?string
@@ -565,5 +573,13 @@ class Message implements ModelInterface
     public function setProduct(MessageProduct $product)
     {
         $this->product = $product;
+    }
+
+    /**
+     * @return Error|null
+     */
+    public function getError(): ?Error
+    {
+        return $this->error ?? null;
     }
 }
