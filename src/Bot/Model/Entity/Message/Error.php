@@ -31,6 +31,6 @@ class Error implements ModelInterface
 
     public function getMessage(): string
     {
-        return $this->message;
+        return strval($this->message);
     }
 }
